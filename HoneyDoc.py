@@ -52,15 +52,15 @@ if args.ext:
 #if args.ssn == False and args.names == False:
 #    sys.exit("You must select at least one record type. -h for help")
 
+#Generate a random fake SSN
 def getSSN():
-    #Generate a random fake SSN
     num1 = random.randint(100,999)
     num2 = random.randint(10,99)
     num3 = random.randint(1000,9999)
     return str(num1) + "-" + str(num2) + "-" + str(num3)
 
+#Generate a random name
 def getName():
-    #Generate a random name
     fNameNum = random.randint(0,listLen - 1)
     lNameNum = random.randint(0,listLen - 1)
     return nameList[fNameNum] + " " + nameList[lNameNum]
@@ -100,6 +100,3 @@ toWrite = html1 + docTitle + html2 + tRow + imgTag + html3
 f = open("honeydoc." + fileExt,"w")
 f.write(toWrite)
 f.close()
-    
-
-
