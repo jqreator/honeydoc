@@ -15,3 +15,7 @@ optional arguments:
                         http://127.0.0.1/hello.png
   -u URL, --url URL     Set a custom URL for the beacon image.
   -e EXT, --ext EXT     File extension. Default is doc
+
+
+Example of how to set a custom document title and image:
+Python.exe HoneyDoc.py -t "MyCompany Employee Info" -c 20 -b -u http://www.mysite.com/image.jpg
