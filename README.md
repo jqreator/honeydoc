@@ -2,7 +2,7 @@ HoneyDoc creates a "honey" document including things like fake names and social 
 
 Once the document is generated it can be edited and personalized to make it look any way you want.
 
-usage: HoneyDoc.py [-h] [-t TITLE] [-c COUNT] [-u URL] [-e EXT]
+usage: HoneyDoc.py [-h] [-t TITLE] [-c COUNT] [-b] [-u URL] [-e EXT]
 
 optional arguments:
   -h, --help            show this help message and exit
@@ -11,6 +11,7 @@ optional arguments:
                         Information
   -c COUNT, --count COUNT
                         Number of fake records to create. Default is 10
-  -u URL, --url URL     URL of image. Default is http://127.0.0.1/hello.png
+  -b, --beacon          Include a beacon image. Default is
+                        http://127.0.0.1/hello.png
+  -u URL, --url URL     Set a custom URL for the beacon image.
   -e EXT, --ext EXT     File extension. Default is doc
-

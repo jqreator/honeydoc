@@ -1,4 +1,4 @@
-#Honey Document Generator v1.0
+#Honey Document Generator v1.0.1
 #Copyright (C)2015 Jacob Parks - jqreator at gmail dot com
 #
 #This program is free software: you can redistribute it and/or modify
@@ -13,6 +13,10 @@
 #
 #You should have received a copy of the GNU General Public License
 #along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+#Release notes:
+#v1.0.0 - Initial release
+#v1.0.1 - Made beacon an option instead of the default and removed unused options
 
 import argparse
 import random
@@ -36,21 +40,16 @@ listLen = len(nameList)
 parser = argparse.ArgumentParser()
 parser.add_argument("-t", "--title", help="Specify a custom document title. Default is " + docTitle)
 parser.add_argument("-c", "--count", help="Number of fake records to create. Default is " + str(numRec))
-#parser.add_argument("-s", "--ssn", help="Include fake SSNs", action="store_true")
-#parser.add_argument("-n", "--names", help="Include fake names", action="store_true")
-parser.add_argument("-u", "--url", help="URL of image. Default is " + imgURL)
+parser.add_argument("-b", "--beacon", help="Include a beacon image. Default is " + imgURL, action="store_true")
+parser.add_argument("-u", "--url", help="Set a custom URL for the beacon image.")
 parser.add_argument("-e", "--ext", help="File extension. Default is " + fileExt)
 args = parser.parse_args()
 if args.title:
     docTitle = args.title
 if args.count:
     numRec = int(args.count)
-#if args.names:
-#    names = True
 if args.ext:
     fileExt = args.ext
-#if args.ssn == False and args.names == False:
-#    sys.exit("You must select at least one record type. -h for help")
 
 #Generate a random fake SSN
 def getSSN():
@@ -93,9 +92,12 @@ html3 = """
 	</html>
 	"""
 
-#Build file contents
-toWrite = html1 + docTitle + html2 + tRow + imgTag + html3
-
+#Build file contents with beacon included
+if args.beacon == True:
+    toWrite = html1 + docTitle + html2 + tRow + imgTag + html3
+else:
+	toWrite = html1 + docTitle + html2 + tRow + html3
+	
 #Write the file
 f = open("honeydoc." + fileExt,"w")
 f.write(toWrite)
