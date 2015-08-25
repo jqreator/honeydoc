@@ -1,5 +1,7 @@
 HoneyDoc creates a "honey" document including things like fake names and social security numbers to look appealing to would be attackers. It also includes a 1x1 pixel png file called hello.png as the tracking image so that you can see the IPs of who opens the document in your web server logs. To install the image, place it in your web servers root directory (or any other directory you want to use) and specify your URL using the --url flag when generating the document. 
 
+Once the document is generated it can be edited and personalized to make it look any way you want.
+
 usage: HoneyDoc.py [-h] [-t TITLE] [-c COUNT] [-u URL] [-e EXT]
 
 optional arguments:
