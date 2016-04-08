@@ -17,6 +17,7 @@
 #Release notes:
 #v1.0.0 - Initial release
 #v1.0.1 - Made beacon an option instead of the default and removed unused options
+#v1.0.2 - Updated img tag to use better form
 
 import argparse
 import random
@@ -85,7 +86,7 @@ html2 = """
 	<th align="left">Social Security</th>
         """
 
-imgTag = '<img src="' + imgURL + '" width="1" height="1" border="0"></table>'
+imgTag = '<img src="' + imgURL + '" width="1" height="1" border="0"/></table>'
 
 html3 = """
 	</body>
