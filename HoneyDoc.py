@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 #Honey Document Generator v1.0.1
 #Copyright (C)2015 Jacob Parks - jqreator at gmail dot com
 #
