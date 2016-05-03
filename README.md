@@ -2,20 +2,16 @@ HoneyDoc creates a "honey" document including things like fake names and social 
 
 Once the document is generated it can be edited and personalized to make it look any way you want.
 
-usage: HoneyDoc.py [-h] [-t TITLE] [-c COUNT] [-b] [-u URL] [-e EXT]
+usage: `HoneyDoc.py [-h] [-t TITLE] [-c COUNT] [-b] [-u URL] [-e EXT]`
 
-optional arguments:
-  -h, --help            show this help message and exit
-  -t TITLE, --title TITLE
-                        Specify a custom document title. Default is Employee
-                        Information
-  -c COUNT, --count COUNT
-                        Number of fake records to create. Default is 10
-  -b, --beacon          Include a beacon image. Default is
-                        http://127.0.0.1/hello.png
-  -u URL, --url URL     Set a custom URL for the beacon image.
-  -e EXT, --ext EXT     File extension. Default is doc
+Optional arguments:
 
+    -h, --help                Show this help message and exit
+    -t TITLE, --title TITLE   Specify a custom document title. Default is Employee Information
+    -c COUNT, --count COUNT   Number of fake records to create. Default is 10
+    -b, --beacon              Include a beacon image. Default is http://127.0.0.1/hello.png
+    -u URL, --url URL         Set a custom URL for the beacon image.
+    -e EXT, --ext EXT         File extension. Default is doc
 
 Example of how to set a custom document title and image:
-Python.exe HoneyDoc.py -t "MyCompany Employee Info" -c 20 -b -u http://www.mysite.com/image.jpg
+`python.exe HoneyDoc.py -t "MyCompany Employee Info" -c 20 -b -u http://www.mysite.com/image.jpg`
