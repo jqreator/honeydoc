@@ -7,11 +7,15 @@ usage: `HoneyDoc.py [-h] [-t TITLE] [-c COUNT] [-b] [-u URL] [-e EXT]`
 Optional arguments:
 
     -h, --help                Show this help message and exit
-    -t TITLE, --title TITLE   Specify a custom document title. Default is Employee Information
-    -c COUNT, --count COUNT   Number of fake records to create. Default is 10
-    -b, --beacon              Include a beacon image. Default is http://127.0.0.1/hello.png
+    -t TITLE, --title TITLE   Specify a custom document title.
+                              Default is Employee Information
+    -c COUNT, --count COUNT   Number of fake records to create.
+                              Default is 10
+    -b, --beacon              Include a beacon image.
     -u URL, --url URL         Set a custom URL for the beacon image.
-    -e EXT, --ext EXT         File extension. Default is doc
+                              Default is http://127.0.0.1/hello.png
+    -e EXT, --ext EXT         File extension.
+                              Default is doc
 
 Example of how to set a custom document title and image:
 `python.exe HoneyDoc.py -t "MyCompany Employee Info" -c 20 -b -u http://www.mysite.com/image.jpg`
