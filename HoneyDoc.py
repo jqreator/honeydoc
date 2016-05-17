@@ -50,6 +50,8 @@ if args.title:
     docTitle = args.title
 if args.count:
     numRec = int(args.count)
+if args.url:
+    imgURL = args.url
 if args.ext:
     fileExt = args.ext
 
@@ -98,7 +100,7 @@ html3 = """
 if args.beacon == True:
     toWrite = html1 + docTitle + html2 + tRow + imgTag + html3
 else:
-	toWrite = html1 + docTitle + html2 + tRow + html3
+    toWrite = html1 + docTitle + html2 + tRow + html3
 	
 #Write the file
 f = open("honeydoc." + fileExt,"w")
