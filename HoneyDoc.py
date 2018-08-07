@@ -1,6 +1,6 @@
 #!/usr/bin/env python
-#Honey Document Generator v1.0.1
-#Copyright (C)2015 Jacob Parks - jqreator at gmail dot com
+#Honey Document Generator v1.0.3
+#Copyright (C)2018 Jacob Parks - jqreator at gmail dot com
 #
 #This program is free software: you can redistribute it and/or modify
 #it under the terms of the GNU General Public License as published by
@@ -19,6 +19,7 @@
 #v1.0.0 - Initial release
 #v1.0.1 - Made beacon an option instead of the default and removed unused options
 #v1.0.2 - Updated img tag to use better form
+#v1.0.3 - Bug fix to close the table tag properly when not using a beacon image, minor formatting improvements, and removed the deprecated center tag
 
 import argparse
 import random
@@ -75,32 +76,37 @@ while n < numRec:
     tRow = tRow + "<tr><td width=200>" + name + "</td><td>" + ss + "</td></tr>"
     n = n + 1
 
+#Build HTML sections
 html1 = """
-        <html>
+    <html>
 	<body>
-	<p><font size="6"><b><c>
+	<p><font size="6"><b>
 	"""
 
 html2 = """
-        </c></b></font></p>
+    </b></font></p>
 	<table style="width:100%">
 	<tr>
 	<th align="left">Name</th>
 	<th align="left">Social Security</th>
         """
 
-imgTag = '<img src="' + imgURL + '" width="1" height="1" border="0"/></table>'
-
 html3 = """
+     </table>
+		"""
+		
+html4 = """
 	</body>
 	</html>
 	"""
+		
+imgTag = '<img src="' + imgURL + '" width="1" height="1" border="0"/>'
 
 #Build file contents with beacon included
 if args.beacon == True:
-    toWrite = html1 + docTitle + html2 + tRow + imgTag + html3
+    toWrite = html1 + docTitle + html2 + tRow +  html3 + imgTag + html4
 else:
-    toWrite = html1 + docTitle + html2 + tRow + html3
+    toWrite = html1 + docTitle + html2 + tRow + html3 + html4
 	
 #Write the file
 f = open("honeydoc." + fileExt,"w")
